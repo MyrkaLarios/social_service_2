@@ -36,18 +36,6 @@
   }
 }
 
-.new-exam-form{
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;
-}
-
-.question-content {
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-}
-
 .question-options {
 
   p {
@@ -66,9 +54,24 @@
   flex-direction: column;
   align-items: center;
 
+  ul {
+    font-size: 20px;
+    list-style: decimal;
+
+    li {
+      text-align: left;
+      padding-left: 10px;
+    }
+    
+    option {
+      list-style: lower-alpha;
+      padding-left: 20px;
+    }
+  }
+
   @media (min-width: 700px) {
     margin: 5vw 10vw;
-  }
+  }  
 }
 
 .student-data {
@@ -91,24 +94,4 @@
   @media (min-width: 700px) {
     width: 40vw;
   }
-}
-
-h5 {
-  font-size: 23px;
-  margin: 0;
-}
-
-li {
-  text-align: left;
-  padding-left: 10px;
-}
-
-ul {
-  font-size: 20px;
-  list-style: decimal;
-}
-
-ul.option {
-  list-style: lower-alpha;
-  padding-left: 20px;
 }

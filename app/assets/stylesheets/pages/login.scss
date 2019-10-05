@@ -1,8 +1,7 @@
-.login-container {
-  height: 85vh;
+.actions {
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .form-login,
@@ -10,20 +9,15 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-}
 
-.register-form {
-  input {
-    width: 100%;
+  .field {
+    margin: 20px 0;
   }
 }
 
-.field {
-  margin: 20px 0;
-}
-
-.actions {
+.login-container {
+  height: 85vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
 }
