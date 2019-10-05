@@ -15,9 +15,5 @@
 require "test_helper"
 
 describe Editorial do
-  let(:editorial) { Editorial.new }
 
-  it "must be valid" do
-    value(editorial).must_be :valid?
-  end
 end

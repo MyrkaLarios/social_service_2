@@ -16,9 +16,5 @@
 require "test_helper"
 
 describe ComprehensionOption do
-  let(:comprehension_option) { ComprehensionOption.new }
 
-  it "must be valid" do
-    value(comprehension_option).must_be :valid?
-  end
 end

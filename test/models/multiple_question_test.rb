@@ -17,9 +17,5 @@
 require "test_helper"
 
 describe MultipleQuestion do
-  let(:multiple_question) { MultipleQuestion.new }
 
-  it "must be valid" do
-    value(multiple_question).must_be :valid?
-  end
 end

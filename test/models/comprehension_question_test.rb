@@ -17,9 +17,5 @@
 require "test_helper"
 
 describe ComprehensionQuestion do
-  let(:comprehension_question) { ComprehensionQuestion.new }
 
-  it "must be valid" do
-    value(comprehension_question).must_be :valid?
-  end
 end
