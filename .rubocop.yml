@@ -19,7 +19,7 @@ AllCops:
     - 'bin/**/*'
     - 'test/**/*'
 Metrics/AbcSize:
-  Max: 18
+  Max: 40
 
 Naming/MemoizedInstanceVariableName:
   Enabled: false

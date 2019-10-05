@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -30,7 +31,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   include Discard::Model
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :invitable, :confirmable
 

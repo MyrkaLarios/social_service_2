@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CertificateTemplatesController < ApplicationController
-
   def index
     @templates = CertificatePart.all
   end
@@ -12,10 +11,10 @@ class CertificateTemplatesController < ApplicationController
 
   def create
     @template = CertificatePart.create(certificate_parts_params)
-    if @template.persisted?
-      flash[:success] = "Plantilla creada con éxito"
-      redirect_to certificate_templates_path
-    end
+    return unless @template.persisted?
+
+    flash[:success] = 'Plantilla creada con éxito'
+    redirect_to certificate_templates_path
   end
 
   def show
@@ -29,7 +28,7 @@ class CertificateTemplatesController < ApplicationController
   def destroy
     @template = CertificatePart.find(params[:id])
     @template.destroy
-    redirect_to certificate_templates_path, notice: "Se eliminó correctamente la plantilla"
+    redirect_to certificate_templates_path, notice: 'Se eliminó correctamente la plantilla'
   end
 
   private

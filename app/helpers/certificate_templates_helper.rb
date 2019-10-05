@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module CertificateTemplatesHelper
-  def exams 
+  def exams
     Exam.approved
   end
 
-  def templates 
+  def templates
     CertificatePart.all
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def actual_users 
+  def actual_users
     User.kept
   end
 

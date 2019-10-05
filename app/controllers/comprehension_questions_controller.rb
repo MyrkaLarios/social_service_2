@@ -51,11 +51,23 @@ class ComprehensionQuestionsController < ApplicationController
   private
 
   def lecture_params
-    params.require(:comprehension_question).permit(:content, :user_id, :value, :file, :unit_id, :lecture, comprehension_options_attributes: %i[id content correct _destroy])
+    params.require(:comprehension_question).permit(:content,
+                                                   :user_id,
+                                                   :value,
+                                                   :file,
+                                                   :unit_id,
+                                                   :lecture,
+                                                   comprehension_options_attributes: %i[id content correct _destroy])
   end
 
   def question_params
-    params.require(:comprehension_question).permit(:content, :user_id, :value, :file, :unit_id, :lecture, comprehension_options_attributes: %i[id content correct _destroy])
+    params.require(:comprehension_question).permit(:content,
+                                                   :user_id,
+                                                   :value,
+                                                   :file,
+                                                   :unit_id,
+                                                   :lecture,
+                                                   comprehension_options_attributes: %i[id content correct _destroy])
   end
 
   def question

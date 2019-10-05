@@ -18,7 +18,7 @@ class QuestionManager
                            else
                              question_params[:comprehension_options_attributes][correct_answ][:content]
                            end
-    correct_answ = question.options.detect{|q| q.content == correct_answ_content}
+    correct_answ = question.options.detect { |q| q.content == correct_answ_content }
     correct_answ.update(correct: true)
   end
 

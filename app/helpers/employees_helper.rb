@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module EmployeesHelper
-  def employees 
+  def employees
     Employee.all
   end
 end

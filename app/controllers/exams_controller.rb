@@ -41,7 +41,12 @@ class ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:level_id, :student_id).merge(date: Time.zone.now, user_id: current_user.id, result: 0, period_id: Period.actual_period.id)
+    params.require(:exam)
+          .permit(:level_id, :student_id)
+          .merge(date: Time.zone.now,
+                 user_id: current_user.id,
+                 result: 0,
+                 period_id: Period.actual_period.id)
   end
 
   def add_questions

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module CertificatesHelper
-  def employees 
+  def employees
     Employee.all
   end
 
-  def certificates 
+  def certificates
     Certificate.kept
   end
 
@@ -20,6 +20,6 @@ module CertificatesHelper
   def put_values(body, name, level)
     newb = body.gsub(/#nombre/, name)
     newb = newb.gsub(/#nivel/, level.to_s)
-    return newb
+    newb
   end
 end

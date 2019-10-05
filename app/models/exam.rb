@@ -25,5 +25,5 @@ class Exam < ApplicationRecord
   has_many :comprehension_questions, through: :exam_quests
   accepts_nested_attributes_for :exam_quests
 
-  scope :approved, -> { select("exams.id, students.name").joins(:student).where("exams.result >= 50").as_json }
+  scope :approved, -> { select('exams.id, students.name').joins(:student).where('exams.result >= 50').as_json }
 end
