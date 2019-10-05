@@ -1,0 +1,6 @@
+%h1 Certificates#new
+= simple_form_for @certificate, url: {action: "create"} do |f|
+  = f.input :certificate_parts_id, collection: @templates, prompt: "Selecciona una plantilla", label: "Plantillas: "
+  = f.input :exam_id, collection: @exams.collect {|c| [c["name"], c["id"]]}, label: "Examenes: "
+  = f.input :date
+  = f.submit "Guardar"

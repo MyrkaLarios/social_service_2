@@ -1,0 +1,13 @@
+.title
+  %h1 Pregunta #
+  %p#show Nivel X Unidad X
+.content-show
+  %p
+    Descripción: #{@question.content}
+  .cont-op
+    - @question.options.each do |option|
+      %p{:class => "option#{' correct' if option.correct}"}
+        Opción: #{option.content}
+  .links-op
+    %a{:href => "#"} Editar
+    %a{:href => "#"} Regresar

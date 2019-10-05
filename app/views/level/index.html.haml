@@ -1,0 +1,11 @@
+- @editorials.each do |editorial|
+  %div
+    .title-level
+      %h2 Editorial en uso:
+      %h2= editorial.name
+    .custom-container
+      - editorial.levels.each do |level|
+        = link_to level_path(level), class:'square' do
+          %p.b-square
+            = "Nivel: #{level.number}"
+.my-5

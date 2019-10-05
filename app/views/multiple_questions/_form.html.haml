@@ -1,0 +1,11 @@
+.container
+  %h2 Registrar pregunta de opción múltiple
+  = f.input :content, as: :text, autofocus: true,label: "#{I18n.t('form.write_your_question')}: ", class:'input-quest'
+  = f.input :value,input_html: {value: '1'}, label: "#{I18n.t('form.question_value')}: ",class:'input-quest'
+  = f.input :unit_id, as: :hidden, input_html: { value: @unit }
+  %h3.reg= I18n.t('form.question_options')
+  #options
+    = f.fields_for :multiple_question_options do |option|
+      = render 'shared/option_fields', f: option
+    .links
+      = link_to_add_association 'Añadir opción', f, :multiple_question_options, partial: 'shared/option_fields'

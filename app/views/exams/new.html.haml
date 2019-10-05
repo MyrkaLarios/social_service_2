@@ -1,0 +1,29 @@
+%h1 EXAMEN
+.show-exam
+  %h5 Datos del alumno
+  = simple_form_for @exam, html: {class: "new-exam-form"}, url: {action: "create"} do |f|
+    = f.input :level_id, as: :hidden, input_html: { value: @level }
+    = f.input :period_id, as: :hidden, input_html: { value: @actual_period }
+    = f.input :student_id, as: :hidden, input_html: { value: @student.id }
+    %p
+      Número de control: #{@student.no_control}
+    %p
+      Nombre: #{@student.name}
+    %p
+      E-mail: #{@student.email}
+    %ul.question-content
+      - count = 0
+      = f.fields_for :exam_quests do |quest|
+        = quest.input :multiple_question_id, as: :hidden, input_html: { value: @questions[count].id}
+        - count+=1
+      - @questions.each do |question|
+        %li
+          = question.content
+          .question-options
+            - MultipleQuestionOption.where(multiple_question_id: question.id).each do |option|
+              %ul.option
+                = radio_button_tag 'correct_answ', option.id, false
+                = option.content
+    .two-buttos-div
+      = link_to 'Regresar', exams_path, class: 'btn btn-outline-primary'
+      = f.submit "Guardar", class: "btn btn-outline-primary"

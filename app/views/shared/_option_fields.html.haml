@@ -1,0 +1,4 @@
+.nested-fields
+  = radio_button_tag 'correct_answ', f.index, f.object.correct
+  = f.text_field :content, class:'form-control'
+  = link_to_remove_association "x", f ,class:'x'

@@ -1,0 +1,13 @@
+.custom-container.editorial
+  = link_to editorial_index_path, class:'square' do
+    %p.b-square Editoriales registradas
+  = link_to new_editorial_path, class:'square' do
+    %p.b-square Nueva Editorial
+  - if @actual_period.present?
+    = link_to edit_period_path(@actual_period[0]), class:'square' do
+      %p.b-square Editar Periodo
+  - else
+    = link_to new_period_path, class:'square' do
+      %p.b-square Determinar Periodo
+.button
+  = link_to 'Regresar', authenticated_root_path, class: 'btn btn-outline-primary b'

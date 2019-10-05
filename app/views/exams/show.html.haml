@@ -1,0 +1,23 @@
+%h1
+  Examen Nivel #{@level}
+.show-exam
+  %p
+    Fecha de creación: #{@exam.created_at.strftime("%d - %m - %Y")}
+  %p
+    Número de control: #{@student.no_control}
+  %p
+    Nombre: #{@student.name}
+  %p
+    E-mail: #{@student.email}
+  %ul
+    - @questions.each do |question|
+      %li
+        = question.content
+        .question-options
+          - MultipleQuestionOption.where(multiple_question_id: question.id).each do |option|
+            %ul.option
+              = radio_button_tag 'correct_answ', option.id, false
+              = option.content
+  .two-buttos-div
+    = link_to 'Regresar', exams_path, class: "btn btn-outline-primary"
+    = link_to 'Enviar a estudiante', student_path(@student.id), class: "btn btn-outline-primary"

@@ -1,15 +1,0 @@
-<div class="title-level">
-  <h2>Editorial en uso:</h2>
-  <h2><%= @level.editorial.name %></h2>
-</div>
-<div class="unit-container">
-<% @level.units.each do |unit|%>
-    <div class="square">
-      <p class="b-square"> Unidad: <%= unit.number %></p>
-      <p class="b-square"> "<%= unit.name %>"</p>
-    </div>
-<% end %>
-</div>
-<div class='my-5'>
-  <%= link_to 'Agregar unidad', new_unit_path(level: @level), class:'btn btn-outline-primary b' %>
-</div>

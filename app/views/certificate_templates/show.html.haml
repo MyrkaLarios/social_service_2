@@ -1,0 +1,11 @@
+%h1
+  Nombre de la plantilla: #{@template.name}
+%h5 Encabezado
+%p= @template.header
+%h5 Cuerpo
+%p= @template.body
+%h5 Cierre
+%p= @template.footer
+.two-buttos-div
+  = link_to 'Regresar', certificates_path, class: 'btn btn-outline-primary'
+  = link_to 'Editar', edit_certificate_template_path, class: 'btn btn-outline-primary'

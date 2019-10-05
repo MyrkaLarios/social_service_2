@@ -1,0 +1,11 @@
+.container-new-period
+  %h1#newperiod Registrar Periodo
+  = simple_form_for @period, url: {action: "create"}, html: {class: "form"} do |f|
+    = f.input :starts_at, as: :date, start_year: Date.today.year - 5, |
+      end_year: Date.today.year + 5,                                  |
+      order: [:day, :month, :year]                                    |
+    = f.input :ends_at, as: :date, start_year: Date.today.year - 5, |
+      end_year: Date.today.year + 5,                                |
+      order: [:day, :month, :year]                                  |
+    = f.input :editorial_id, collection: @editorials, prompt: "Selecciona editorial"
+    = f.submit "Crear", class: "btn btn-outline-primary b"

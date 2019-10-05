@@ -1,0 +1,7 @@
+%h1.title-ed-reg Editoriales registradas
+- @editorials.each do |editorial|
+  .row.container-q.border-bottom
+    .col-9.question= editorial.name
+    .col-3.opciones
+      = link_to 'Ver'
+      = link_to 'Eliminar'

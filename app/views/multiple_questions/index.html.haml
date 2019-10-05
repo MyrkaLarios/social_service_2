@@ -1,0 +1,13 @@
+.container-fluid
+  .title
+    %h2 Preguntas opción múltiple
+    .filters
+      = collection_select(:editorial, :editorial_id, @editorials, :id, :name, {selected: @actual_editorial } )
+      .editorial-levels-dropdown-container
+        = collection_select(:level, :level_id, @actual_editorial.levels, :id, :number, {prompt: "Nivel"})
+      = simple_form_for @question, url: new_multiple_question_path, method: :get, html: {class: "form container-filter"} do |f|
+        .level-units-dropdown-container
+          = f.input :unit, as: :select,  collection: @actual_editorial.levels.first.units, label: false, prompt: "Unidad"
+        = f.submit "Agregar pregunta", class: 'btn btn-outline-primary add-question'
+  .questions-container
+    = render partial: 'questions', locals: { questions: @questions }

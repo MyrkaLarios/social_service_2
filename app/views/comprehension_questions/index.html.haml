@@ -1,0 +1,13 @@
+.container-fluid
+  .title
+    %h2 Preguntas de comprensión lectora
+    .filters
+      = collection_select(:editorial, :editorial_id, @editorials, :id, :name, {selected: @actual_editorial })
+      .editorial-levels-dropdown-container
+        = collection_select(:level, :level_id, @actual_editorial.levels, :id, :number, {selected: @actual_editorial.levels.first })
+      = simple_form_for @question, url: new_comprehension_question_path, method: :get, html: {class: "form container-filter"} do |f|
+        .level-units-dropdown-container
+          = f.input :unit_id, collection: @actual_editorial.levels.first.units, include_blank: false
+        = f.submit "Agregar pregunta", class: 'btn btn-outline-primary add-question'
+  .questions-container
+    = render partial: 'questions', locals: { questions: @questions }

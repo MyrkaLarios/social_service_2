@@ -1,0 +1,25 @@
+%h1
+  Welcome #{@student.name}
+.student-instructions
+  %h5
+    This is your evaluation for level #{@level}
+  %br/
+  %h5 Instructions: Read the following questions and choose an asnwer for each. When you finish, click Send button
+.student-exam
+  %form{:action => "/students/new"}
+    %input{:name => "student", :type => "hidden", :value => "#{@student.id}"}/
+    %input{:name => "exam", :type => "hidden", :value => "#{@exam.id}"}/
+    %input{:name => "questions-qty", :type => "hidden", :value => "#{@student.exam.multiple_question.count}"}/
+    - i = 0
+    - @student.exam.multiple_question.each do |question|
+      %li
+        = question.content
+        .question-options
+          %input{:name => "#{i}-value", :type => "hidden", :value => "#{question.value}"}/
+          - MultipleQuestionOption.where(multiple_question_id: question.id).each do |option|
+            %ul.option
+              %input{:name => "#{i}-#{option.id}", :type => "hidden", :value => "#{option.correct}"}/
+              = radio_button_tag "#{i}-correct_answ", option.id
+              = option.content
+          - i += 1
+    %input{:type => "submit", :value => "Submit"}/

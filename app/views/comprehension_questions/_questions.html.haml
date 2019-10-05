@@ -1,0 +1,7 @@
+- questions.each do |question|
+  .row.container-q.border-bottom
+    .col-9.question= question.content
+    .col-3.opciones
+      = link_to 'Ver', comprehension_question_path(question)
+      = link_to 'Editar', edit_comprehension_question_path(question)
+      = link_to 'Eliminar', comprehension_question_path(question), method: :delete

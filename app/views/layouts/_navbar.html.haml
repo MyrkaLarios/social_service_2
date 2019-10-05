@@ -1,0 +1,12 @@
+%nav.navbar.navbar-light.bg-light
+  .logo
+    = link_to authenticated_root_path, class: 'link-navbar' do
+      = image_tag "itcolima2.png", style: "width: 40px; height: 40px; margin-right: 10px;"
+      %p#navbar English coordination
+  .btn-group.dropleft
+    %a#dropdownMenuButton{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+      = image_tag "user.png", style: "width: 40px; height: 40px; margin-right: 10px;"
+    .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
+      %a.dropdown-item{:href => "#"} Action
+      %a.dropdown-item{:href => "#"} Another action
+      %a.dropdown-item{:href => "#"} Something else here

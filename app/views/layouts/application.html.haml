@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title SocialService
+    %link{:href => "https://fonts.googleapis.com/css?family=Montserrat:100,200,200i,300,400,500,600,700,800", :rel => "stylesheet"}/
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity => "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :rel => "stylesheet"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/trix/0.11.3/trix.css'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/trix/0.11.3/trix.js'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    - unless controller_name == "students"
+      = render 'layouts/navbar'
+    - flash.each do |key, value|
+      %div{:class => "alert alert-#{key}"}= value
+    = yield

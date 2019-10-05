@@ -1,0 +1,7 @@
+.container-level
+  .title-level
+    %h2 Añadir Nivel
+  = simple_form_for @level, url: {action: "create"}, html: {class: "form add-level"} do |f|
+    = f.input :editorial_id, collection: @editorials, prompt: "Selecciona Editorial"
+    = f.input :number, prompt: "Selecciona Nivel"
+    = f.submit "Crear", class:'btn btn-outline-primary create-level'

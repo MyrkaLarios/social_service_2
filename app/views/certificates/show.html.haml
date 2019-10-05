@@ -1,0 +1,17 @@
+%h1
+  CERTIFICADO
+  %h1
+    %div
+      %p
+        A #{@certificate.date}
+      %p
+        = @template.header
+      %h5
+        = @student.name
+      %p
+        = @template.body
+      %p
+        = @template.footer
+    .two-buttos-div
+      = link_to 'Regresar', certificates_path, class: 'btn btn-outline-primary'
+      = link_to 'Editar', edit_certificate_path, class: 'btn btn-outline-primary'

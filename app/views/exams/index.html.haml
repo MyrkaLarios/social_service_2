@@ -1,0 +1,26 @@
+%h1 Exámenes generados
+%div
+  - @exams.each do |exam|
+    .row.container-q.border-bottom
+      .col-9.question
+        Estudiante: #{exam.student.no_control} Estado:
+      .col-3.opciones
+        = link_to 'Ver', exam_path(exam)
+        = link_to 'Eliminar', exam_path(exam), method: :delete
+%h1 Generar examen
+.form-exam
+  = simple_form_for @exam, url: new_exam_path, method: :get, html: {class: "generate-exam"} do |f|
+    .exam-data
+      %h5
+        Periodo actual: #{@actual_period.last.period_name}
+      = f.select :level_id, @actual_editorial.levels.collect { |l| [l.number, l.id] }, prompt: "Selecciona un nivel"
+    .student-data
+      %h5 Datos del alumno:
+      .student-form
+        = f.fields_for :student do |student_attributes|
+          = student_attributes.input :no_control, label: "Número de control", required: false
+          = student_attributes.input :name, label: "Nombre", required: false
+          = student_attributes.input :email, label: "E-mail", required: false
+      .two-buttos-div
+        = link_to 'Regresar', authenticated_root_path, class: 'btn btn-outline-primary'
+        = f.submit "Generar examen", class: 'btn btn-outline-primary'

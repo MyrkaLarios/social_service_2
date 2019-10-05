@@ -1,0 +1,9 @@
+.container-new-edit
+  %h1.title-ed Guardar una nueva editorial
+  = simple_form_for @editorial, url: {action: "create"}, html: {class: "form"} do |f|
+    = f.input :id_editorial, class:'input'
+    = f.input :name, class: 'input'
+    %br/
+    .two-buttos-div
+      = link_to 'Regresar', authenticated_root_path, class: 'btn btn-outline-primary'
+      = f.submit "Crear", class:'btn btn-outline-primary button-font'

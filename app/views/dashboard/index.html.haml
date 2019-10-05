@@ -1,0 +1,23 @@
+.custom-container
+  = link_to period_index_path, class: 'square' do
+    .icons
+      = image_tag 'period.png', class: 'icon '
+      = image_tag 'book.png', class: 'icon'
+    %p.b-square Configurar periodo y editorial
+  = link_to level_index_path, class: 'square' do
+    = image_tag 'level.png', class: 'icon'
+    %p.b-square Añadir niveles y unidades
+  = link_to multiple_questions_path, class: 'square' do
+    = image_tag 'question.png', class: 'icon'
+    %p.b-square Preguntas opción múltiple
+  = link_to comprehension_questions_path, class: 'square' do
+    = image_tag 'question.png', class: 'icon'
+    %p.b-square Preguntas comprensión lectora
+  = link_to exams_path, class: 'square' do
+    = image_tag 'question.png', class: 'icon'
+    %p.b-square Exámenes
+  = link_to certificates_path, class: 'square' do
+    = image_tag 'question.png', class: 'icon'
+    %p.b-square Constancias
+.button
+  = link_to 'Salir', destroy_user_session_path, method: 'delete', class: 'btn btn-outline-primary'

@@ -1,0 +1,9 @@
+%h1 CertificateTemplates#new
+= simple_form_for @template, url: {action: "create"} do |f|
+  = f.input :name, label: "Nombre de la plantilla: "
+  = f.input :header, as: :text, input_html: {rows: 5, cols: 30}, label: "Encabezado: "
+  = f.input :body, as: :text, input_html: {rows: 10, cols: 30}, label: "Cuerpo: "
+  = f.input :footer, as: :text, input_html: {rows: 5, cols: 30}, label: "Cierre: "
+  .two-buttos-div
+    = link_to 'Regresar', certificates_path, class: 'btn btn-outline-primary'
+    = f.submit "Guardar", class: "btn btn-outline-primary"

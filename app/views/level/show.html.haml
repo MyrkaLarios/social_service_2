@@ -1,0 +1,11 @@
+.title-level
+  %h2 Editorial en uso:
+  %h2= @level.editorial.name
+.unit-container
+  - @level.units.each do |unit|
+    .square
+      %p.b-square
+        Unidad: #{unit.number}
+      %p.b-square
+        "#{unit.name}"
+.my-5

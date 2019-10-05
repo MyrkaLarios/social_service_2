@@ -1,0 +1,8 @@
+.title-unit
+  %h2 Registrar Unidad
+  %h2 Nivel:
+.unit-form
+  = f.input :name
+  = f.input :number
+  = f.input :level_id, as: :hidden, input_html: { value: @level }
+  %div
