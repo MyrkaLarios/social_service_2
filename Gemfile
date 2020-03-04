@@ -17,7 +17,7 @@ gem 'discard', '~> 1.0'
 gem 'font-awesome-sass', '~> 5.9.0'
 gem "haml-rails"
 gem "interactor-rails"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "pry-rails"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
